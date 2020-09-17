@@ -1,25 +1,3 @@
-//2 lists of pokemons for project/ 
-let pokemonList1=[
-	{name: "Bulbasar", hight: 2.04, type: ["Grass", "poison"]},
-	{name: "Charmander", hight: 2, type: "Fire"}
-];
-
-let pokemonList2 = [
-	{name: "Squirtle", hight: 1.08, type: "water"},
-	{name: "Pikachu", hight: 1.04, type: "Electric"}
-];
-
-let pokemons = pokemonList1 + pokemonList2;
-
-/For loop for both pokemo lists/ 
-for (let i = 0; i < pokemonList1.length; i++) {
-	document.write(" Pokemons' " + pokemonList1[i].name + " hight is " + pokemonList1[i].hight + ".</br>")
-};
-
-for (let i = 0; i < pokemonList2.length; i++) {
-	document.write("pokemons' hight is " + pokemonList2[i].hight + ".</br>")
-}; 
-
 //Organizing the code for assigments/ 
 
 let repository = [
@@ -38,9 +16,10 @@ let repository = [
 		hight: 1.08, 
 		type: "water"
 	},
-	{name: "Pikachu", 
-	hight: 1.04, 
-	type: "Electric"
+	{
+		name: "Pikachu", 
+		hight: 1.04, 
+		type: "Electric"
     }
 ];
  
