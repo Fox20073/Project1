@@ -1,39 +1,57 @@
-//Organizing the code for assigments/ 
+//Organizing the code for assignment IIFT/ 
+var pokemonRepository = (function() {
+	var pokemonList= [
+		{
+			name: "Bulbasar", 
+			hight: 2.04, 
+			type: ["Grass", " Poison"]	
+		},
+		{
+			name: "Charmander", 
+			hight: 2, 
+			type: "Fire"
+		},
+		{
+			name: "Squirtle", 
+			hight: 1.08, 
+			type: "water"
+		},
+		{
+			name: "Pikachu", 
+			hight: 1.04,
+			type: "Electric"
+		}
+	];
 
-let repository = [
-	{
-		name: "Bulbasar", 
-		hight: 2.04, 
-		type: ["Grass", "poison"]	
-	},
-	{
-		name: "Charmander", 
-		hight: 2, 
-		type: "Fire"
-	},
-	{
-		name: "Squirtle", 
-		hight: 1.08, 
-		type: "water"
-	},
-	{
-		name: "Pikachu", 
-		hight: 1.04, 
-		type: "Electric"
-    }
-];
- 
-// Using if statment to specify pokemons by size /
+	function getAll() {
+		return pokemonList;
+	};
 
-for (let i=0; i < repository.length; i++){
-	if (repository[i].hight <= 1.5){
-		console.log (repository[i].name + " " + repository[i].type + " is small pokemon! ");
-		document.write (repository[i].name + " is small pokemon! </br>" );
-	} else if (repository[i].hight > 1.5 && repository[i].hight <= 2){
-		console.log (repository[i].name + " " + repository[i].type + " is avarege pokemon! ")
-		document.write (repository[i].name + " is avarege pokemon! </br>");
-	} else {
-		console.log (repository[i].name + " " + repository[i].type + " is HUGE pokemon!!! ")
-		document.write (repository[i].name + " is BIG pokemon!!!! </br>");
-	}
-}
+	function add(pokemon) {
+		pokemonList.push(pokemon)
+	};
+
+	return {
+		getAll: getAll,
+		add: add
+	};
+})();
+
+// Practising with IIFT call
+
+console.log (pokemonRepository.getAll());
+
+pokemonRepository.add({name: "Psy Duck", hight: 2, type:"Electricity"});
+
+console.log (pokemonRepository.getAll());
+	
+// Using IF ELSE function with forEach() statement amd IIFT
+	pokemonRepository.getAll().forEach(function(pokemon) {
+		if (pokemon.hight <= 1.5){
+			document.write("<p class = pokemon>" + pokemon.name + " hight is " + pokemon.hight + " this is small pokemon.</p>");
+		} else if (pokemon.hight > 1.5 && pokemon.hight <= 2) {
+			document.write("<p class = pokemon>" + pokemon.name + " hight is " + pokemon.hight +" this is average pokemon.</p>")
+		} else {
+			document.write("<p class = pokemon>"  + pokemon.name + " hight is " + pokemon.hight +" this is BIG pokemon!!!</p>" )
+		}
+	});

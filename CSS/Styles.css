@@ -1,4 +1,4 @@
-/*heading stilng*/
+/*heading styling*/
 h1{
     text-align: center;
     text-shadow: 2px;
@@ -6,8 +6,8 @@ h1{
     color: aqua;
 }
 /* I'm not sure how to style script text */
-script {
-   text-align: left;
+.pokemon {
+   text-align: center;
    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
    margin-left: 15px; 
 }
