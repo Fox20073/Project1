@@ -30,28 +30,45 @@ var pokemonRepository = (function() {
 	function add(pokemon) {
 		pokemonList.push(pokemon)
 	};
+	function addListItem (pokemon){
+		let pokedexList = document.querySelector(".pokemon-list");
+		let listPokedex = document.createElement('li');
+		let button = document.createElement("button");
+
+		button.innerText = pokemon.name;
+		button.classList.add("button");
+		listPokedex.appendChild(button);
+		pokedexList.appendChild(listPokedex);
+
+		button.addEventListener("click", function(event){showDetails(pokemon.name);});
+	};
+
+	function showDetails(pokemon){
+		console.log(pokemon)
+	} 
+
 
 	return {
 		getAll: getAll,
-		add: add
+		add: add,
+		addListItem: addListItem,
+		showDetails: showDetails
 	};
 })();
 
 // Practising with IIFT call
 
-console.log (pokemonRepository.getAll());
+
+
 
 pokemonRepository.add({name: "Psy Duck", hight: 2, type:"Electricity"});
 
-console.log (pokemonRepository.getAll());
-	
-// Using IF ELSE function with forEach() statement amd IIFT
-	pokemonRepository.getAll().forEach(function(pokemon) {
-		if (pokemon.hight <= 1.5){
-			document.write("<p class = pokemon>" + pokemon.name + " hight is " + pokemon.hight + " this is small pokemon.</p>");
-		} else if (pokemon.hight > 1.5 && pokemon.hight <= 2) {
-			document.write("<p class = pokemon>" + pokemon.name + " hight is " + pokemon.hight +" this is average pokemon.</p>")
-		} else {
-			document.write("<p class = pokemon>"  + pokemon.name + " hight is " + pokemon.hight +" this is BIG pokemon!!!</p>" )
-		}
-	});
+
+
+pokemonRepository.add({name: "Pidgey", hight: 1, type:["Flying", "Air"]});
+
+pokemonRepository.getAll().forEach(function(pokemon){
+pokemonRepository.addListItem(pokemon)
+});
+
+
