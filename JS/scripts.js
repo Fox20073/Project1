@@ -62,7 +62,9 @@
 // Now we add the details to the item
 			item.name = details.name;
 			item.imageUrl = details.sprites.front_default;
+			item.imageUrlB =details.sprites.back_default;
 			item.height = details.height;
+			item.weight = details.weight;
 			item.types = details.types;
 			})
 			.catch(function (e) {
@@ -95,8 +97,13 @@
 // Element for IMG
 			let imgElement = $('<img class="modal-img">');
 			imgElement.attr('src', item.imageUrl);
+			let imgElementBack = $('<img class="modal-img">');
+			imgElementBack.attr('src', item.imageUrlB);
+			
 // Element(-s) for information
 			let hightElement = $('<p>Hight is: ' + item.height + '</p>' );
+
+			let weightElement = $('<p>Weight is: ' + item.weight + '</p>' );
 
 			let typesElement = document.createElement ('p');
 			item.types.forEach(function(el, index){
@@ -108,8 +115,10 @@
 //Modal organization
 			modalHeader.append(nameElement);
 			modalBody.append(imgElement);
+			modalBody.append(imgElementBack);
 			modalBody.append(typesElement);
 			modalBody.append(hightElement);
+			modalBody.append(weightElement);
 			modalHeader.append(btnClose);
 			};
 
