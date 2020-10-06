@@ -18,6 +18,10 @@ li{
   list-style-type: none;
 }
 
+li:first-child{
+  margin-top: 70px;
+}
+
 body{
   background-image:url("img/bacgroung.png");
   background-repeat: no-repeat;
