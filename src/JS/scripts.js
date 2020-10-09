@@ -101,9 +101,9 @@
 			imgElementBack.attr('src', item.imageUrlB);
 			
 // Element(-s) for information
-			let hightElement = $('<p>Hight is: ' + item.height + '</p>' );
+			let hightElement = $('<p>Hight: ' + item.height + ' dm</p>' );
 
-			let weightElement = $('<p>Weight is: ' + item.weight + '</p>' );
+			let weightElement = $('<p>Weight: ' + item.weight + ' hg</p>' );
 
 			let typesElement = document.createElement ('p');
 			item.types.forEach(function(el, index){
